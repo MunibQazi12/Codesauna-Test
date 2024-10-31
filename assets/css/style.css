@@ -34,6 +34,7 @@ body {
     max-width: 350px;
     text-align: center;
     box-sizing: border-box;
+    height: 490px;
 }
 
 .result-container .heading-results {
@@ -103,7 +104,7 @@ body {
 .summary-container {
     width: 100%;
     max-width: 350px;
-    padding: 40px 30px;
+    padding: 40px 30px 18px;
     border-radius: 30px;
     box-sizing: border-box;
 }
@@ -223,6 +224,7 @@ body {
     .result-container {
         max-width: 100%;
         border-radius: 0px 0px 30px 30px;
+        height: auto;
     }
 
     .result-container .circle {
