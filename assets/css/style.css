@@ -39,7 +39,7 @@ body {
 .result-container .heading-results {
     font-size: 22px;
     line-height: 26px;
-    font-weight: 600;
+    font-weight: 700;
     color: hsl(241, 100%, 89%);
     text-align: center;
     margin-top: 0;
@@ -81,7 +81,7 @@ body {
 .result-container .footer-heading {
     font-size: 32px;
     line-height: 38px;
-    font-weight: 500;
+    font-weight: 700;
     color: hsl(0, 0%, 100%);
     text-align: center;
     margin-top: 20px;
@@ -127,8 +127,7 @@ body {
     justify-content: space-between;
     align-items: center;
     border-radius: 8px;
-    padding: 14px;
-    margin-bottom: 16px;
+    padding: 16px 14px;
 }
 
 .summary-container .summary-item .item-name {
@@ -174,17 +173,38 @@ body {
     display: block;
     border-radius: 40px;
     text-align: center;
-    background-color: hsl(224, 30%, 27%);
+    /* background-color: hsl(224, 30%, 27%); */
+    background: linear-gradient(hsl(224, 30%, 27%), hsl(224, 30%, 27%));
     border: 0;
     font-size: 18px;
     font-weight: 700;
     color: hsl(0, 0%, 100%);
-    padding: 14px;
+    font-family: Hanken, sans-serif;
+    padding: 16px 14px;
     cursor: pointer;
+    transition: 0.5s all;
 }
 
 .summary-container .continue-btn:hover {
-    background-color: hsl(241, 81%, 54%);
+    /* background-color: hsl(241, 81%, 54%); */
+    background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+.list-container { 
+    width: 290px; 
+    height: 54px; 
+    background: linear-gradient(to right, #d9d9d9 3px, transparent 1px) 0 0, 
+    linear-gradient(to right, #d9d9d9 3px, transparent 1px) 0 100%, 
+    linear-gradient(to left, #d9d9d9 3px, transparent 1px) 100% 0, 
+    linear-gradient(to left, #d9d9d9 3px, transparent 1px) 100% 100%, 
+    linear-gradient(to bottom, #d9d9d9 3px, transparent 1px) 0 0, 
+    linear-gradient(to bottom, #d9d9d9 3px, transparent 1px) 100% 0, 
+    linear-gradient(to top, #d9d9d9 3px, transparent 1px) 0 100%, 
+    linear-gradient(to top, #d9d9d9 3px, transparent 1px) 100% 100%; 
+    background-repeat: no-repeat; 
+    background-size: 10px 10px; 
+    border-radius : 6px; 
+    margin-bottom: 16px;
 }
 
 @media (max-width: 600px) {
@@ -214,6 +234,10 @@ body {
         font-size: 54px;
         line-height: 38px;
         margin-bottom: 12px;
+    }
+
+    .result-container .footer-desc {
+        max-width: 100%;
     }
 
     .summary-container {
