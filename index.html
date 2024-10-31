@@ -40,23 +40,27 @@
 
         const summaryList = document.getElementById('summary-list');
         data.forEach(item => {
+          const liParentDiv = document.createElement('div');
+          liParentDiv.className = 'list-container';
           const listItem = document.createElement('li');
           listItem.className = 'summary-item';
-          listItem.style.backgroundColor = getBackgroundColor(item.category); 
+          const colors = getBackgroundColor(item.category); 
+          listItem.style.backgroundColor = colors.backgroundColor;
 
           listItem.innerHTML = `
             <div class="item-name">
               <span class="item-icon">
                 <img src="${item.icon}" alt="${item.category}_icon" />
               </span>
-              <p class="item-title">${item.category}</p>
+              <p class="item-title" style = 'color: ${colors.textColor}'>${item.category}</p>
             </div>
             <div>
               <span class="item-score">${item.score}</span>
               <span class="item-total-score"> / 100</span>
             </div>
           `;
-          summaryList.appendChild(listItem);
+          liParentDiv.append(listItem);
+          summaryList.appendChild(liParentDiv);
         });
       })
       .catch(error => console.error('Error fetching data:', error));
@@ -66,15 +70,33 @@
     function getBackgroundColor(category) {
       switch (category) {
         case 'Reaction':
-          return 'hsl(0, 100%, 97.5%)';
+          return {
+            backgroundColor: 'hsl(0, 100%, 97.5%)',
+            textColor: 'hsl(0, 100%, 67%)'
+          };
         case 'Memory':
-          return 'hsl(39, 100%, 97.5%)';
+        return {
+            backgroundColor: 'hsl(39, 100%, 97.5%)',
+            textColor: 'hsl(39, 100%, 56%)'
+          };
+        
         case 'Verbal':
-          return 'hsl(166, 100%, 97.5%)';
+        return {
+            backgroundColor: 'hsl(166, 100%, 97.5%)',
+            textColor: 'hsl(166, 100%, 37%)'
+          };
+        
         case 'Visual':
-          return 'hsl(234, 85%, 97.5%)';
+        return {
+            backgroundColor: 'hsl(234, 85%, 97.5%)',
+            textColor: 'hsl(234, 85%, 45%)'
+          };
+
         default:
-          return 'white';
+        return {
+            backgroundColor: 'white',
+            textColor: 'black'
+        };
       }
     }
   </script>
